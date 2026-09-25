@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const navLinks = [
   { label: "Home", id: "home" },
@@ -9,80 +9,55 @@ const navLinks = [
   { label: "Analysis", id: "analysis" },
   { label: "Multimedia", id: "multimedia" },
   { label: "Reflection", id: "reflection" },
-{ label: "Conclusion", id: "conclusion" },
-{ label: "Our Group", id: "group-members" },
-{ label: "References", id: "references" },
+  { label: "Conclusion", id: "conclusion" },
+  { label: "Our Group", id: "group-members" },
+  { label: "References", id: "references" },
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
+  const goToSection = (id) => {
+    const section = document.getElementById(id);
 
-    window.addEventListener("scroll", handleScroll);
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-    });
-
-    setMobileOpen(false);
+    setMenuOpen(false);
   };
 
   return (
-    <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
-      <div className="navbar-inner">
-
-        <button
-          className="brand"
-          onClick={() => scrollToSection("home")}
-        >
-          <span>BEYOND</span>
-          <strong>/</strong>
-          <span>EXPECTATIONS</span>
-        </button>
-
-        <div className="desktop-nav">
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => scrollToSection(link.id)}
-            >
-              {link.label}
-            </button>
-          ))}
-        </div>
-
-        <button
-          className="mobile-menu-button"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Toggle navigation"
-        >
-          {mobileOpen ? "✕" : "☰"}
-        </button>
+    <header className="navbar">
+      <div
+        className="navbar-brand"
+        onClick={() => goToSection("home")}
+      >
+        BEYOND <span>/ EXPECTATIONS</span>
       </div>
 
-      {mobileOpen && (
-        <div className="mobile-nav">
-          {navLinks.map((link) => (
-            <button
-              key={link.id}
-              onClick={() => scrollToSection(link.id)}
-            >
-              {link.label}
-            </button>
-          ))}
-        </div>
-      )}
-    </nav>
+      <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
+        {navLinks.map((link) => (
+          <button
+            key={link.id}
+            className="nav-link"
+            onClick={() => goToSection(link.id)}
+          >
+            {link.label}
+          </button>
+        ))}
+      </nav>
+
+      <button
+        className="menu-button"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Open navigation menu"
+      >
+        ☰
+      </button>
+    </header>
   );
 }

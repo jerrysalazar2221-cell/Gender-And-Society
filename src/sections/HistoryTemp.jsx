@@ -1,35 +1,39 @@
 import React from "react";
 
-const timeline = [
+const history = [
   {
-    period: "Pre-Colonial Philippines",
-    title: "Different Social Roles",
-    text: "Before Spanish colonization, communities had varied roles for women and men. Women could participate in economic activities, community life, and leadership, while spiritual roles could also be held by women and other recognized community figures.",
+    period: "Pre-Colonial",
+    title: "Pre-Colonial Philippines",
+    text:
+      "Before colonial rule, Filipino communities had different responsibilities for men and women. Some roles could overlap depending on the community and social position."
   },
   {
-    period: "Spanish Colonial Period",
-    title: "Changing Expectations",
-    text: "Spanish colonial society introduced and reinforced social and religious expectations that influenced family life, education, behavior, and gender roles.",
+    period: "Spanish Period",
+    title: "Spanish Colonial Period",
+    text:
+      "Spanish colonial influence changed social expectations through religion, family structures, education, and cultural practices."
   },
   {
     period: "American Period",
-    title: "Education and Public Participation",
-    text: "Expanded access to formal education and changing institutions created additional opportunities for women and men to participate in public and professional life.",
+    title: "American Colonial Period",
+    text:
+      "American influence introduced changes in education, employment, and public participation that affected gender expectations."
   },
   {
-    period: "Modern Philippines",
-    title: "Changing Gender Roles",
-    text: "Contemporary Filipino society continues to experience changing expectations in education, employment, family responsibilities, leadership, media, and community participation.",
+    period: "Modern",
+    title: "Modern Philippines",
+    text:
+      "Contemporary Filipino society continues to experience changing gender roles through education, careers, technology, media, and social awareness."
   },
 ];
 
-export default function HistoryTemp() {
+export default function History() {
   return (
     <section id="history" className="section history-section">
 
-      <div className="section-heading">
-        <span className="eyebrow">
-          SECTION 02
+      <div className="section-header">
+        <span className="section-eyebrow">
+          FROM PAST TO PRESENT
         </span>
 
         <h2>
@@ -37,34 +41,31 @@ export default function HistoryTemp() {
         </h2>
 
         <p>
-          Gender roles in Philippine society have developed
-          and changed across different historical periods.
+          Gender expectations in the Philippines have
+          developed alongside historical and social changes.
         </p>
       </div>
 
-      <div className="timeline">
+      <div className="history-timeline">
 
-        {timeline.map((item, index) => (
-          <article className="timeline-item" key={item.period}>
+        {history.map((item, index) => (
+          <article
+            className="history-item"
+            key={item.period}
+          >
 
-            <div className="timeline-number">
-              0{index + 1}
+            <div className="history-year">
+              {String(index + 1).padStart(2, "0")}
             </div>
 
-            <div className="timeline-content">
-
-              <span>
+            <div className="history-content">
+              <span className="section-eyebrow">
                 {item.period}
               </span>
 
-              <h3>
-                {item.title}
-              </h3>
+              <h3>{item.title}</h3>
 
-              <p>
-                {item.text}
-              </p>
-
+              <p>{item.text}</p>
             </div>
 
           </article>

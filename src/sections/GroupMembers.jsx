@@ -33,10 +33,10 @@ const members = [
 
 export default function GroupMembers() {
   return (
-    <section id="group-members" className="group-section">
+    <section id="group-members" className="section group-section">
 
-      <div className="section-heading">
-        <span className="eyebrow">
+      <div className="section-header">
+        <span className="section-eyebrow">
           OUR TEAM
         </span>
 
@@ -45,7 +45,8 @@ export default function GroupMembers() {
         </h2>
 
         <p>
-          The students behind the Beyond / Expectations project.
+          Meet the students behind the Beyond / Expectations
+          Gender and Society project.
         </p>
       </div>
 
@@ -54,29 +55,12 @@ export default function GroupMembers() {
         {members.map((member, index) => (
           <article className="member-card" key={member.name}>
 
-            <div className="member-photo-area">
+            <div className="member-photo">
 
-              <div className="member-photo-ring">
-
-                <div className="member-photo-fallback">
-                  {member.name
-                    .split(" ")
-                    .slice(0, 2)
-                    .map((word) => word[0])
-                    .join("")
-                    .toUpperCase()}
-                </div>
-
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="member-photo"
-                  onError={(event) => {
-                    event.currentTarget.style.display = "none";
-                  }}
-                />
-
-              </div>
+              <img
+                src={member.image}
+                alt={member.name}
+              />
 
               <div className="member-number">
                 {index + 1}
@@ -84,9 +68,9 @@ export default function GroupMembers() {
 
             </div>
 
-            <div className="member-content">
+            <div className="member-info">
 
-              <span className="member-label">
+              <span className="member-tag">
                 GROUP MEMBER
               </span>
 
@@ -94,19 +78,21 @@ export default function GroupMembers() {
                 {member.name}
               </h3>
 
-              <div className="member-course">
-                <span>🎓</span>
+              <p>
+                🎓 Bachelor of Science in
+                Information Technology
+              </p>
 
-                <span>
-                  Bachelor of Science in
-                  <br />
-                  Information Technology
+              <div className="member-details">
+
+                <span className="member-detail">
+                  📚 3rd Year
                 </span>
-              </div>
 
-              <div className="member-tags">
-                <span>📚 3rd Year</span>
-                <span>🏫 BSIT 3C</span>
+                <span className="member-detail">
+                  🏫 BSIT 3C
+                </span>
+
               </div>
 
             </div>
@@ -118,7 +104,7 @@ export default function GroupMembers() {
 
       <div className="team-message">
 
-        <span>
+        <span className="section-eyebrow">
           BEYOND / EXPECTATIONS
         </span>
 
@@ -127,10 +113,10 @@ export default function GroupMembers() {
         </h3>
 
         <p>
-          Together, we explored gender roles, history,
-          contemporary experiences, social issues, and
-          the importance of understanding gender in
-          Philippine society.
+          Our group worked together to explore gender roles,
+          Philippine history, contemporary experiences,
+          social issues, and the importance of understanding
+          gender in Philippine society.
         </p>
 
       </div>
