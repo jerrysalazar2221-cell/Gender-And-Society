@@ -1,105 +1,98 @@
-import React, { useState } from "react";
+import React from "react";
 
-const reflections = {
-  "Group Member 1":
-    "I learned that gender roles can change depending on history, culture, family, education, and society.",
-  "Group Member 2":
-    "I realized that stereotypes can affect the way people see themselves and others.",
-  "Group Member 3":
-    "I learned that understanding different experiences can help create a more respectful society.",
-  "Group Member 4":
-    "I learned that gender expectations are not always fixed and can change over time.",
-};
+const reflections = [
+  {
+    number: "01",
+    title: "Understanding Gender",
+    text:
+      "Learning about gender helped us understand that many expectations placed on women and men are influenced by society, culture, and history.",
+  },
+  {
+    number: "02",
+    title: "Recognizing Stereotypes",
+    text:
+      "We realized that gender stereotypes can affect how people are treated, the opportunities they receive, and the choices they feel comfortable making.",
+  },
+  {
+    number: "03",
+    title: "Seeing Change",
+    text:
+      "Philippine society has changed over time, creating more opportunities for people to participate in education, employment, leadership, and other areas.",
+  },
+  {
+    number: "04",
+    title: "Moving Forward",
+    text:
+      "Understanding gender issues encourages us to respect different experiences and support a society where people are not limited by traditional expectations.",
+  },
+];
 
 export default function Reflection() {
-  const [selected, setSelected] = useState("Group Member 1");
-
   return (
-    <section id="reflection" className="section">
+    <section id="reflection" className="section reflection-section">
 
       <div className="section-header">
-
         <span className="section-eyebrow">
-          07 • REFLECTION
+          OUR PERSPECTIVE
         </span>
 
         <h2>
-          What We
-          <span> Learned</span>
+          What We <span>Learned</span>
         </h2>
 
         <p>
-          Reflection allows us to connect the concepts we studied
-          with our understanding of society.
+          Reflecting on gender and society helped us understand
+          how expectations, experiences, and opportunities can
+          change over time.
         </p>
-
       </div>
 
-      <div className="reflection-layout">
+      <div className="reflection-grid">
 
-        <div className="reflection-select">
-
-          <label>
-            Select Reflection
-          </label>
-
-          <select
-            value={selected}
-            onChange={(e) => setSelected(e.target.value)}
+        {reflections.map((item) => (
+          <article
+            className="reflection-card"
+            key={item.number}
           >
-            {Object.keys(reflections).map((member) => (
-              <option key={member} value={member}>
-                {member}
-              </option>
-            ))}
-          </select>
 
-        </div>
+            <div className="reflection-number">
+              {item.number}
+            </div>
 
-        <div className="reflection-card">
+            <div className="reflection-content">
 
-          <span className="section-eyebrow">
-            PERSONAL REFLECTION
-          </span>
+              <h3>
+                {item.title}
+              </h3>
 
-          <h3>{selected}</h3>
+              <p>
+                {item.text}
+              </p>
 
-          <p>
-            {reflections[selected]}
-          </p>
+            </div>
 
-        </div>
+          </article>
+        ))}
 
       </div>
 
-      <div className="reflection-questions">
+      <div className="reflection-quote">
 
-        <div>
-          <span>01</span>
-          <h3>What did we learn?</h3>
-          <p>
-            Gender roles are influenced by culture, history,
-            family, education, and social expectations.
-          </p>
-        </div>
+        <span className="section-eyebrow">
+          BEYOND / EXPECTATIONS
+        </span>
 
-        <div>
-          <span>02</span>
-          <h3>What surprised us?</h3>
-          <p>
-            Social expectations can change as communities and
-            societies develop.
-          </p>
-        </div>
+        <h3>
+          “Understanding creates the possibility for change.”
+        </h3>
 
-        <div>
-          <span>03</span>
-          <h3>Why does it matter?</h3>
-          <p>
-            Understanding gender can help people think critically
-            about stereotypes, opportunities, and equality.
-          </p>
-        </div>
+        <p>
+          Our reflection reminds us that learning about gender
+          is not only about understanding the past. It is also
+          about becoming more aware of the experiences of others
+          and thinking about how we can contribute to a more
+          respectful and inclusive society.
+        </p>
 
       </div>
 

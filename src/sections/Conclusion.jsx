@@ -2,32 +2,62 @@ import React from "react";
 
 export default function Conclusion() {
   return (
-    <section id="conclusion" className="conclusion-section">
+    <section id="conclusion" className="section conclusion-section">
 
-      <div className="conclusion-inner">
+      <div className="conclusion-box">
 
-        <span className="eyebrow dark-eyebrow">
-          CONCLUSION
-        </span>
+        <div className="conclusion-label">
+          <span className="section-eyebrow">
+            FINAL THOUGHTS
+          </span>
+        </div>
 
         <h2>
-          Beyond Expectations.
+          Beyond <span>Expectations</span>
         </h2>
 
+        <p className="conclusion-intro">
+          Gender roles in the Philippines have changed through
+          history, but traditional expectations and inequalities
+          can still influence people's experiences today.
+        </p>
+
+        <div className="conclusion-divider"></div>
+
         <p>
-          Gender roles in Philippine society have changed
-          across history and continue to evolve today.
-          Understanding these changes allows us to recognize
-          how culture, institutions, family, education,
-          media, and social experiences shape expectations.
+          Understanding gender and society helps us recognize
+          how culture, history, education, media, and social
+          expectations shape the lives of people. While progress
+          has created more opportunities and representation,
+          challenges such as stereotypes and discrimination
+          continue to exist.
         </p>
 
         <p>
-          By learning, questioning, and reflecting on these
-          roles, we can contribute to a society where people
-          are respected for their abilities, choices,
-          experiences, and contributions.
+          Moving beyond expectations means creating space for
+          people to develop their abilities, make choices, and
+          participate in society without being limited by
+          traditional gender roles.
         </p>
+
+        <div className="conclusion-message">
+
+          <span className="conclusion-icon">
+            →
+          </span>
+
+          <div>
+            <strong>
+              Understanding is the first step toward change.
+            </strong>
+
+            <small>
+              Respect differences. Challenge stereotypes.
+              Build a more inclusive society.
+            </small>
+          </div>
+
+        </div>
 
       </div>
 

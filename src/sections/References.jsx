@@ -2,24 +2,32 @@ import React from "react";
 
 const references = [
   {
-    title: "Commission on Human Rights of the Philippines",
+    number: "01",
+    title: "Philippine Commission on Women",
     description:
-      "Resources and educational materials related to gender equality and human rights.",
+      "Information and resources about gender equality, women's rights, and gender-related issues in the Philippines.",
+    link: "https://pcw.gov.ph/",
   },
   {
+    number: "02",
     title: "Philippine Statistics Authority",
     description:
-      "Statistical resources related to Philippine society, population, education, and work.",
+      "Statistical information and data related to the Philippine population, society, education, and other social indicators.",
+    link: "https://psa.gov.ph/",
   },
   {
+    number: "03",
     title: "United Nations Women",
     description:
-      "Educational and informational resources concerning gender equality and women's empowerment.",
+      "Resources and information about gender equality and women's empowerment around the world.",
+    link: "https://www.unwomen.org/",
   },
   {
-    title: "World Health Organization",
+    number: "04",
+    title: "Official Gazette of the Republic of the Philippines",
     description:
-      "Resources discussing gender, social determinants, and health-related perspectives.",
+      "Official government information, laws, policies, and historical documents of the Philippines.",
+    link: "https://www.officialgazette.gov.ph/",
   },
 ];
 
@@ -27,34 +35,35 @@ export default function References() {
   return (
     <section id="references" className="section references-section">
 
-      <div className="section-heading">
-        <span className="eyebrow">
-          SECTION 08
+      <div className="section-header">
+        <span className="section-eyebrow">
+          SOURCES &amp; RESOURCES
         </span>
 
         <h2>
-          <span>References</span>
+          Our <span>References</span>
         </h2>
 
         <p>
-          Sources and organizations that can support further
-          study of gender and society.
+          The following sources were used to support our
+          discussion of gender, history, society, and equality.
         </p>
       </div>
 
       <div className="references-list">
 
-        {references.map((reference, index) => (
+        {references.map((reference) => (
           <article
             className="reference-card"
-            key={reference.title}
+            key={reference.number}
           >
 
-            <span>
-              {String(index + 1).padStart(2, "0")}
-            </span>
+            <div className="reference-number">
+              {reference.number}
+            </div>
 
-            <div>
+            <div className="reference-content">
+
               <h3>
                 {reference.title}
               </h3>
@@ -62,6 +71,16 @@ export default function References() {
               <p>
                 {reference.description}
               </p>
+
+              <a
+                href={reference.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="reference-link"
+              >
+                Visit Source →
+              </a>
+
             </div>
 
           </article>
@@ -69,10 +88,18 @@ export default function References() {
 
       </div>
 
-      <div className="citation-note">
-        <strong>Academic note:</strong> Add the exact URLs,
-        publication dates, authors, and access dates required
-        by your instructor to your final reference list.
+      <div className="references-note">
+
+        <span className="section-eyebrow">
+          BEYOND / EXPECTATIONS
+        </span>
+
+        <p>
+          These resources provide additional information for
+          understanding gender and society in the Philippines
+          and beyond.
+        </p>
+
       </div>
 
     </section>

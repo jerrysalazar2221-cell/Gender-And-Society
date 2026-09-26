@@ -10,23 +10,14 @@ const navLinks = [
   { label: "Multimedia", id: "multimedia" },
   { label: "Reflection", id: "reflection" },
   { label: "Conclusion", id: "conclusion" },
-  { label: "Our Group", id: "group-members" },
   { label: "References", id: "references" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onNavigate }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const goToSection = (id) => {
-    const section = document.getElementById(id);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-
+  const handleNavigation = (id) => {
+    onNavigate(id);
     setMenuOpen(false);
   };
 
@@ -34,7 +25,7 @@ export default function Navbar() {
     <header className="navbar">
       <div
         className="navbar-brand"
-        onClick={() => goToSection("home")}
+        onClick={() => handleNavigation("home")}
       >
         BEYOND <span>/ EXPECTATIONS</span>
       </div>
@@ -44,7 +35,7 @@ export default function Navbar() {
           <button
             key={link.id}
             className="nav-link"
-            onClick={() => goToSection(link.id)}
+            onClick={() => handleNavigation(link.id)}
           >
             {link.label}
           </button>

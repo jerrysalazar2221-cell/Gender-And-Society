@@ -1,12 +1,6 @@
 import React from "react";
 
-export default function Hero() {
-  const scrollTo = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
-
+export default function Hero({ setScreen }) {
   return (
     <section id="home" className="hero">
       <div className="hero-content">
@@ -16,8 +10,9 @@ export default function Hero() {
         </div>
 
         <h1 className="hero-title">
-          Gender Roles in the
-          <span>Philippines</span>
+          Exploring Gender Roles
+          <br />
+          <span>in the Philippines</span>
         </h1>
 
         <p className="hero-description">
@@ -27,19 +22,21 @@ export default function Hero() {
         </p>
 
         <div className="hero-buttons">
+
           <button
             className="hero-button primary"
-            onClick={() => scrollTo("history")}
+            onClick={() => setScreen("history")}
           >
             Explore History
           </button>
 
           <button
             className="hero-button secondary"
-            onClick={() => scrollTo("contemporary")}
+            onClick={() => setScreen("contemporary")}
           >
             View Modern Roles
           </button>
+
         </div>
 
       </div>

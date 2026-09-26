@@ -2,24 +2,37 @@ import React from "react";
 
 const comparisons = [
   {
-    area: "Family Roles",
-    past: "Roles were often strongly associated with traditional expectations.",
-    present: "Responsibilities can increasingly be negotiated and shared.",
+    topic: "Family",
+    past: "Traditional expectations often assigned women more household and caregiving responsibilities.",
+    present:
+      "Some families increasingly share household and caregiving responsibilities.",
   },
   {
-    area: "Education",
-    past: "Access and expectations were influenced by historical social structures.",
-    present: "Education provides broader opportunities for people across genders.",
+    topic: "Work",
+    past: "Certain occupations were strongly associated with particular genders.",
+    present:
+      "Women and men participate in many different professions.",
   },
   {
-    area: "Work",
-    past: "Occupations were often associated with traditional gender expectations.",
-    present: "People participate in a wider range of professional fields.",
+    topic: "Education",
+    past:
+      "Educational opportunities were more limited for many people, especially women in earlier periods.",
+    present:
+      "Women and men have broad access to formal education, although inequalities can still exist.",
   },
   {
-    area: "Leadership",
-    past: "Leadership opportunities were influenced by social and cultural expectations.",
-    present: "Representation and participation continue to be discussed.",
+    topic: "Leadership",
+    past:
+      "Leadership was often influenced by traditional social hierarchies, largely favoring men.",
+    present:
+      "Women and men participate in leadership positions in various sectors of society.",
+  },
+  {
+    topic: "Media",
+    past:
+      "Traditional portrayals often emphasized conventional masculine and feminine roles.",
+    present:
+      "Media includes more diverse representations, although stereotypes remain.",
   },
 ];
 
@@ -27,28 +40,31 @@ export default function Analysis() {
   return (
     <section id="analysis" className="section analysis-section">
 
-      <div className="section-heading">
-        <span className="eyebrow">
-          SECTION 05
+      <div className="section-header">
+        <span className="section-eyebrow">
+          PAST VS. PRESENT
         </span>
 
         <h2>
-          Critical <span>Analysis</span>
+          Gender Roles <span>Through Change</span>
         </h2>
 
         <p>
-          Comparing historical and contemporary experiences
-          helps us see how gender expectations can change over time.
+          Comparing different periods helps us understand
+          changes in Philippine gender roles and identify
+          challenges that continue today.
         </p>
       </div>
 
-      <div className="comparison-wrapper">
+      {/* COMPARISON TABLE */}
 
-        <table className="comparison-table">
+      <div className="analysis-table-wrapper">
+
+        <table className="analysis-table">
 
           <thead>
             <tr>
-              <th>Area</th>
+              <th>Topic</th>
               <th>Historical Perspective</th>
               <th>Contemporary Perspective</th>
             </tr>
@@ -56,11 +72,21 @@ export default function Analysis() {
 
           <tbody>
 
-            {comparisons.map((item) => (
-              <tr key={item.area}>
-                <td>{item.area}</td>
-                <td>{item.past}</td>
-                <td>{item.present}</td>
+            {comparisons.map((row) => (
+              <tr key={row.topic}>
+
+                <td className="analysis-topic">
+                  {row.topic}
+                </td>
+
+                <td>
+                  {row.past}
+                </td>
+
+                <td>
+                  {row.present}
+                </td>
+
               </tr>
             ))}
 
@@ -70,22 +96,33 @@ export default function Analysis() {
 
       </div>
 
-      <div className="analysis-box">
+      {/* CRITICAL ANALYSIS */}
 
-        <span className="eyebrow">
-          KEY INSIGHT
-        </span>
+      <div className="critical-analysis">
 
-        <h3>
-          Gender roles are not static.
-        </h3>
+        <div className="critical-analysis-title">
+          <span>🔍</span>
+
+          <h3>
+            Our Critical Analysis
+          </h3>
+        </div>
 
         <p>
-          Gender expectations can be influenced by history,
-          culture, institutions, education, media, family,
-          and changing social perspectives. Examining these
-          influences helps us understand both continuity
-          and change in Philippine society.
+          Philippine gender roles have changed significantly
+          over time. Education, economic development, political
+          participation, social movements, and changing family
+          structures have created more opportunities for women
+          and men.
+        </p>
+
+        <p>
+          However, progress does not mean that all gender
+          inequalities have disappeared. Stereotypes,
+          discrimination, unequal responsibilities, and
+          differences in representation may still affect people.
+          Understanding these continuing challenges is important
+          in creating a more respectful and inclusive society.
         </p>
 
       </div>
